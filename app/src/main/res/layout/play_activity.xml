@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/test_background"
+     >
+    
+    <RelativeLayout android:id="@+id/topLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@drawable/test_title"
+        
+        android:orientation="horizontal" >
+		<!-- 回退 -->
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="8dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_music_btn"
+            android:padding="8dp"
+            android:src="@drawable/test_back"
+            android:scaleType="fitXY" />
+		<View
+            android:id="@+id/testsplit"
+            android:layout_width="20dp"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+       		android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@id/backBtn"
+            android:background="@drawable/test_split" />
+		<!-- 标题名 -->
+        <TextView
+            android:id="@+id/testtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="文件名"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+    <!-- 底部 界面 -->
+	<RelativeLayout
+        android:id="@+id/bottomTestLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFFFF" >
+        
+<!-- 播放模式  循环 -->
+        <ImageView
+            android:id="@+id/playmodel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:background="@drawable/playmodel_circle"
+            android:padding="20dp"
+            android:layout_marginLeft="20dp"
+             />
+ <!-- 底部 播放 或 暂停  -->
+        <FrameLayout
+            android:id="@+id/playTestLayout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true" >
+<!-- 少个暂停图片 -->
+            <ImageButton
+                android:id="@+id/btnTestPause"
+                android:layout_width="40dp"
+           		android:layout_height="40dp"
+            	android:scaleType="fitXY"
+                android:padding="6dp"
+                android:background="@drawable/icon_pause_normal"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/btnTestPlay"
+                android:layout_width="40dp"
+           		android:layout_height="40dp"
+            	android:scaleType="fitXY"
+                android:padding="6dp"
+                android:background="@drawable/test_play" />
+        </FrameLayout>
+        <!-- 上一曲 -->
+        <ImageButton
+                android:id="@+id/btnTestPre"
+                android:layout_toLeftOf="@id/playTestLayout"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:layout_width="30dp"
+           		android:layout_height="30dp"
+            	android:scaleType="fitXY"
+                android:padding="6dp"
+                android:background="@drawable/test_pre" />
+        <!-- 下一曲 -->
+        <ImageButton
+                android:id="@+id/btnTestNext"
+                android:layout_toRightOf="@id/playTestLayout"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:layout_width="30dp"
+           		android:layout_height="30dp"
+            	android:scaleType="fitXY"
+                android:padding="6dp"
+                android:background="@drawable/test_next" />
+        
+        <!-- 最喜爱 -->
+        <ImageButton
+                android:id="@+id/btnTestFavorite"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:layout_width="20dp"
+           		android:layout_height="20dp"
+            	android:scaleType="fitXY"
+                android:padding="6dp"
+                android:background="@drawable/test_favorite" />
+    </RelativeLayout>
+    
+    <!-- 进度条 -->
+    <ProgressBar
+        android:id="@+id/seekbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomTestLayout"
+        android:max="100"
+        android:maxHeight="3dp"
+        android:minHeight="3dp"
+        android:progressDrawable="@drawable/seekbar" />
+	  
+  
+</RelativeLayout>
